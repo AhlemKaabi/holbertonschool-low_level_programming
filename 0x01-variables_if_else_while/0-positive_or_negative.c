@@ -2,9 +2,9 @@
 #include <stdlib.h>
 #include <time.h>
 /**
- * main function - entry point
+ * main - entry point
  * compare numbers
- * Returns success
+ * Return: success
  */
 int main(void)
 {
@@ -14,7 +14,7 @@ int main(void)
 	n = rand() - RAND_MAX / 2;
 	if (n > 0)
 		printf("is positive");
-    else if (n == 0)
+	else if (n == 0)
 		printf("is zero");
 	else
 		printf("is negative");
