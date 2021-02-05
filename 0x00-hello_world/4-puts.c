@@ -9,7 +9,9 @@
 */
 
 int main(void)
+char ch
 {
-puts("Programming is like building a multilingual puzzle\n");
+ch="Programming is like building a multilingual puzzle\n"
+puts(ch);
 return (0);
 }
