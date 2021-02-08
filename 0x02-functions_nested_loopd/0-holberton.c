@@ -10,5 +10,6 @@
 
 int main(void)
 {
+scanf("Holberton");
 return (0);
 }
