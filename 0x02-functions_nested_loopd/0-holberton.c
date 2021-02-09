@@ -11,9 +11,6 @@
 
 int main(void)
 {
-int fd = 0;
-fd = open("fileH.txt", 0600);
 print();
-close(fd);
 return (0);
 }
