@@ -1,13 +1,12 @@
-#include <stdio.h>
-
+#include "holberton.h"
 /**
-* main - entry point
-* prints 10 decimal numbers
-* Return: success
+* print_alphabet - print
+* main - entry function
+* return: - success
 */
-int main(void)
+void print_alphabet(void)
 {
-void print_alphabet(void);
-print_alphabet();
-return (0);
+int i;
+for (i = 'a'; i <= 'z'; i++)
+_putchar(i);
 }
