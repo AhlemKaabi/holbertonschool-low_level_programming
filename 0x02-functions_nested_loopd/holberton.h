@@ -1,7 +1,9 @@
 #include <unistd.h>
+
 void print(void)
 {
-fprintf(stderr, "Holberton\n");
+int fd = 0;
+write(fd, "Holberton\n", 10);
 }
 int _putchar(char c)
 {
