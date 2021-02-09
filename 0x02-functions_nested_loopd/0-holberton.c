@@ -4,10 +4,9 @@
 #include <fcntl.h>
 #include "holberton.h"
 /**
-* print - print a message
 * main - entry point
-* 
-* Return
+* Return: - success
+* print - print a message
 */
 
 int main(void)
