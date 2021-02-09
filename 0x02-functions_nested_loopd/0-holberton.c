@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "holberton.h"
 /**
 * main - entry point
 * prints 10 decimal numbers
@@ -7,6 +8,6 @@
 
 int main(void)
 {
-fprintf(stderr, "Holberton\n");
+print();
 return (0);
 }
