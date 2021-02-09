@@ -4,9 +4,10 @@
 #include <fcntl.h>
 #include "holberton.h"
 /**
+* print - print a message
 * main - entry point
-* prints 10 decimal numbers
-* Return: success
+* 
+* Return
 */
 
 int main(void)
