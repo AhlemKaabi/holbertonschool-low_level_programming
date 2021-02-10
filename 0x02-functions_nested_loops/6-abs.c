@@ -3,20 +3,16 @@
 #include <stdio.h>
 
 /**
-* main - entry point
-* prints 10 decimal numbers
-* Return: success
+* _abs - prints the sign of a number
+* @n: number
+* Return: success or fail
 */
-int _abs(int)
-{
-int r;
-scanf("give an integer",&r);
-x = (r+r)/2;
-return (x);
-}
-int main(void)
+int _abs(int n)
 {
 int n;
-int _abs(int );
-return (0);
+if (n >= 0)
+n = n * 1;
+else
+n = *(-1);
+return (n);
 }
