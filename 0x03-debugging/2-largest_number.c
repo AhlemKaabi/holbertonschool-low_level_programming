@@ -25,5 +25,6 @@ else
 {
 largest = c;
 }
+printf("%d is the largest number", largest);
 return (largest);
 }
