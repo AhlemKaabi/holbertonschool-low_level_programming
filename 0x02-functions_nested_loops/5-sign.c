@@ -1,34 +1,25 @@
-#include <stdlib.h>
-#include <time.h>
-#include <stdio.h>
-
+#include "holberton.h"
 /**
-* main - entry point
-* prints 10 decimal numbers
-* Return: success
+* print_sign - prints thesign of a number
+* @n: parameter
+* Return: success or fail
 */
 int print_sign(int n)
 {
 if (n > 0)
 {
-scanf("+");
+_putchar('+');
 return (1);
 }
-else if(n = '0')
+else if(n == 0)
 {
-scanf("0")
+_putchar('0');
 return (0);
 }
 else
 {
-scanf("-");
+_putchar('-')
 return (-1);
 }
 
-}
-int main(void)
-{
-int n;
-int print_sign(int n);
-return (0);
 }
