@@ -1,21 +1,12 @@
-#include <stdlib.h>
-#include <time.h>
-#include <stdio.h>
-
+#include "holberton.h"
 /**
-* main - entry point
-* prints 10 decimal numbers
-* Return: success
+* _islower - function that checks for lowrcase
+* Return: success or fail
 */
 int _islower(int c)
 {
-if (c ='c')
+if (c >= 97 && c <= 122)
 return 1;
 else
 return 0;
-}
-int main(void)
-{
-int _islower(int c);
-return (0);
 }
