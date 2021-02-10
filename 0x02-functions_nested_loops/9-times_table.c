@@ -27,7 +27,7 @@ void times_table(void)
 				}
 
 			}
-			if (x >= 10)
+			else 
 			{
 				if (j != 9)
 				{
