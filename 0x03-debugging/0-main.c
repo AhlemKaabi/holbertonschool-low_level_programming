@@ -8,9 +8,9 @@
 int main(void)
 {
 int i;
-
+printf("into function\n");
 i = 98;
 positive_or_negative(i);
-printf("test is done\n");
+
 return (0);
 }
