@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include "holberton.h"
 
 /**
@@ -24,6 +25,6 @@ else
 {
 largest = c;
 }
-printf("%d is the largest number", largest)
+printf("%d is the largest number", largest);
 return (largest);
 }
