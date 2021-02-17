@@ -7,30 +7,42 @@
 */
 int _atoi(char *s)
 {
-	int i, j, res, sign;
+	int init, k, res, sign, is_a_number, begin_of_number;
 
-	i = 0;
-	while (*(s + i) != '\0')
-	{
-		i++;
-	}
 	sign = 1;
 	res = 0;
-	for (j = 0; j < i; j++)
+	/**
+	 * find the first apperance of a digit in the string
+	*/
+	begin_of_number = 0;
+	is_a_number = 0;
+	k = 0;
+	while (is_a_number == 0)
 	{
-		if (*(s + j) >= '0' && *(s + j) <= '9')
+		if ((*(s + k) >= '0' && *(s + k) <= '9'))
 		{
-			res = res * 10 + s[j] - '0';
+			is_a_number = 1;
+			begin_of_number = k;
+		}
+		if (*(s + k) == '-')
+		{
+			sign = sign * -1;
+			k = k + 1;
 		}
 		else
-		{
-			res = res + 0;
-		}
-		if (*(s + j - 1) == '-')
-		{
-			sign = -1;
-		}
+		k = k + 1;
 	}
-
-return (sign * res);
+	/* start looping the string from position of the first number */
+	init = begin_of_number;
+	k = k - 1;
+	while ((*(s + init) >= '0' && *(s + init) <= '9'))
+	{
+		res = res * 10 + s[init] - '0';
+		init++;
+	}
+	if (*(s + k) == '-')
+	{
+		sign = -1;
+	}
+	return (sign * res);
 }
