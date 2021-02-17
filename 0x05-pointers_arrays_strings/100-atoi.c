@@ -7,13 +7,8 @@
 */
 int _atoi(char *s)
 {
-	unsigned int init, k, sign, is_a_number, begin_of_number;
-	unsigned int res;
-	sign = 1;
-	res = 0;
-	/**
-	 * find the first apperance of a digit in the string
-	*/
+	unsigned int init, k, sign = 1, is_a_number, begin_of_number, res = 0;
+
 	begin_of_number = 0;
 	is_a_number = 0;
 	k = 0;
@@ -38,13 +33,11 @@ int _atoi(char *s)
 		else
 		k = k + 1;
 	}
-	/* start looping the string from position of the first number */
 	init = begin_of_number;
 	k = k - 1;
 	while (s[init] >= '0' && s[init] <= '9')
 	{
 		res = res * 10 + s[init] - '0';
-		/*printf("resultat is : %d\n", res);*/
 		init++;
 	}
 	if (*(s + k) == '-')
