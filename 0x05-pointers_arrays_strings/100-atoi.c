@@ -12,20 +12,14 @@ int _atoi(char *s)
 	begin_of_number = 0;
 	is_a_number = 0;
 	k = 0;
-	if (*s == '\0')
-	{
-		return (res);
-	}
-	else
-	{
 	while (is_a_number == 0)
 	{
-		if ((*(s + k) >= '0' && *(s + k) <= '9'))
+		if ((s[k] >= '0' && s[k] <= '9') || *s == '\0' )
 		{
 			is_a_number = 1;
 			begin_of_number = k;
 		}
-		if (*(s + k) == '-')
+		if (s[k] == '-')
 		{
 			sign = sign * -1;
 			k = k + 1;
@@ -40,10 +34,5 @@ int _atoi(char *s)
 		res = res * 10 + s[init] - '0';
 		init++;
 	}
-	if (*(s + k) == '-')
-	{
-		sign = -1;
-	}
 	return (sign * res);
-	}
 }
