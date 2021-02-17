@@ -7,8 +7,8 @@
 */
 int _atoi(char *s)
 {
-	int init, k, res, sign, is_a_number, begin_of_number;
-
+	unsigned int init, k, sign, is_a_number, begin_of_number;
+	unsigned int res;
 	sign = 1;
 	res = 0;
 	/**
@@ -17,6 +17,12 @@ int _atoi(char *s)
 	begin_of_number = 0;
 	is_a_number = 0;
 	k = 0;
+	if (*s == '\0')
+	{
+		return (res);
+	}
+	else
+	{
 	while (is_a_number == 0)
 	{
 		if ((*(s + k) >= '0' && *(s + k) <= '9'))
@@ -35,9 +41,10 @@ int _atoi(char *s)
 	/* start looping the string from position of the first number */
 	init = begin_of_number;
 	k = k - 1;
-	while ((*(s + init) >= '0' && *(s + init) <= '9'))
+	while (s[init] >= '0' && s[init] <= '9')
 	{
 		res = res * 10 + s[init] - '0';
+		/*printf("resultat is : %d\n", res);*/
 		init++;
 	}
 	if (*(s + k) == '-')
@@ -45,4 +52,5 @@ int _atoi(char *s)
 		sign = -1;
 	}
 	return (sign * res);
+	}
 }
