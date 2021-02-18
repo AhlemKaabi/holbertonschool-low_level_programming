@@ -1,5 +1,4 @@
 # include "holberton.h"
-#include <stdio.h>
 /*
 *_strncpy - that copies a string
 * Return: string
