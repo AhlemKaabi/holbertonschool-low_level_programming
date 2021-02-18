@@ -1,6 +1,9 @@
 # include "holberton.h"
-/*
-*_strncpy - that copies a string
+/**
+* _strncpy - function
+*@n: para
+*@dest: para
+*@src: para
 * Return: string
 */
 char *_strncpy(char *dest, char *src, int n)
