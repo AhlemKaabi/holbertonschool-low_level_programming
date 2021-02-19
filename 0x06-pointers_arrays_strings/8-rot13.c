@@ -8,16 +8,16 @@ char *rot13(char *ch)
 {
 	int i, j;
 
-	char s1[] = "aAbBcCdDeEfFgGhiIjJkKlLmM";
-	char s2[] = "nNoOpPqQrRsStTuUvVwWxXyYzZ";
+	char s[] = "anANboBOcpCPdqDQerERfsFSgtGThuHUivIVjwJWkxKXlyLYmzMZnaNAobOBpcPCqdQDreREsfSFtgTGuhUHviVIwjWJxkXKylYLzmZM";
 
 	for (i = 0 ; ch[i] != '\0'; i++)
 	{
-		for (j = 0; (s1[j] != '\0' || S2[j] != '\0'); j++)
+		for (j = 0; s[j] != '\0'; j= j +2)
 		{
-			if (ch[i] == s1[j] || ch[i] == s2[j])
+			if (ch[i] == s[j])
 			{
-				ch[i] = s1[j];
+				ch[i] = s[j + 1];
+				break;
 			}
 		}
 	}
