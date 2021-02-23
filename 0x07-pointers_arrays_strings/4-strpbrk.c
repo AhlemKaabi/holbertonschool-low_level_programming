@@ -20,7 +20,6 @@ char *_strpbrk(char *s, char *accept)
 			break;
 		}
 		s++;
-		t = s;
 	}
 
 	return (t);
