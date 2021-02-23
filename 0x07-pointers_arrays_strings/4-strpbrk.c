@@ -7,19 +7,20 @@
 * Return: the length of the prefix
 */
 char *_strpbrk(char *s, char *accept)
-{ 
+{
 	char *t;
+
 	t = s;
-	while(*s != '\0')
+	while (*s != '\0')
 	{
-		while(*accept++ != '\0')
+		while (*accept++ != '\0')
 		{
 			if (*s == *accept)
 			t = s;
 			break;
 		}
 		s++;
-		t = s; 
+		t = s;
 	}
 
 	return (t);
