@@ -21,7 +21,7 @@ int test_sqrt(int x, int i)
 */
 int _sqrt_recursion(int n)
 {
-	if (n <= 2)
+	if (n < 1)
 		return (-1);
-	return (test_sqrt(n, 3));
+	return (test_sqrt(n, 0));
 }
