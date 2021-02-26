@@ -7,6 +7,8 @@
 */
 int test_sqrt(int x, int i)
 {
+	if (x == 1)
+		return (1);
 	if (i == x && ((i * i) % 2 != 0))
 		return (-1);
 	if (i * i == x)
