@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <ctype.h>
 /**
 * main - entry point
 * @argc: number of arguments
@@ -12,13 +13,13 @@ int main(int argc, char *argv[])
 
 	if (argc == 1)
 		printf("0\n");
-	if (argc > 1)
+	else
 	{
 		for (i = 1; i < argc; i++)
 		{
 			for (j = 0; argv[i][j] != '\0'; j++)
 			{
-				if (!(argv[i][j] >= '0' && argv[i][j] <= '9'))
+				if (isdigit(argv[i][j]) == 0)
 				{
 					printf("Error\n");
 					return (1);
