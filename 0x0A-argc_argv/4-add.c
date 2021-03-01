@@ -8,16 +8,21 @@
 */
 int main(int argc, char *argv[])
 {
-	int x = 0;
+	int i, x = 0;
 
-	if (argc > 1)
+	if (argc == 1)
+		printf("0\n");
+
+
+	else if (atoi(argv[1]) >= 0)
 	{
-		x = atoi(argv[1]) * atoi(argv[2]);
+		for (i = 0; i < argc; i++)
+		{
+			x = x + atoi(argv[i]);
+		}
 		printf("%i\n", x);
 	}
 	else
-	{
-		printf("Error\n");	
-	}
+		printf("Error\n");
 	return(1);
 }
