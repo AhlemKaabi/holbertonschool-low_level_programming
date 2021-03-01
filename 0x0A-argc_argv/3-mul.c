@@ -10,7 +10,7 @@ int main(int argc, char *argv[])
 {
 	int x = 0;
 
-	if (argc > 1)
+	if (argc > 2)
 	{
 		x = atoi(argv[1]) * atoi(argv[2]);
 		printf("%d\n", x);
@@ -18,6 +18,7 @@ int main(int argc, char *argv[])
 	else
 	{
 		printf("Error\n");
+		return (1);
 	}
-	return (1);
+	return (0);
 }
