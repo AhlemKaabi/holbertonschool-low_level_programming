@@ -14,21 +14,28 @@ char *_strdup(char *str)
 	char *str_copy;
 	int i, j;
 
-	for (i = 0; str[i] == '\0'; i++)
+	for (i = 0; str[i] != '\0'; i++)
 	{
 		length++;
 	}
-	str_copy = (char *)malloc(length * sizeof(char));
-	if (str_copy == NULL)
+	if (length == 0)
 	{
 		return (NULL);
 	}
 	else
 	{
-		for (j = 1; j <= length; j++)
+		str_copy = (char *)malloc(length * sizeof(char));
+		if (str_copy == NULL)
 		{
-			str_copy[j] = str[j];
+			return (NULL);
 		}
-		return (str_copy);
+		else
+		{
+			for (j = 1; j <= length; j++)
+			{
+				str_copy[j] = str[j];
+			}
+			return (str_copy);
+	}
 	}
 }
