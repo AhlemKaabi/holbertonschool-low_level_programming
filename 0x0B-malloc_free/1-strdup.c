@@ -15,30 +15,27 @@ char *_strdup(char *str)
 	char *str_copy;
 	int i, j;
 
+	if (str == 0)
+	{
+		return (NULL);
+	}
 	for (i = 0; str[i] != '\0'; i++)
 	{
 		length++;
 	}
 	/*printf("length = %d", length);*/
-	if (length == 0)
+	str_copy = (char *)malloc(length * sizeof(char));
+	if (str_copy == NULL)
 	{
 		return (NULL);
 	}
 	else
 	{
-		str_copy = (char *)malloc(length * sizeof(char));
-		if (str_copy == NULL)
+		for (j = 0; j <= length; j++)
 		{
-			return (NULL);
+			str_copy[j] = str[j];
 		}
-		else
-		{
-			for (j = 0; j <= length; j++)
-			{
-				str_copy[j] = str[j];
-			}
-			return (str_copy);
-		}
-		free(str_copy);
+		return (str_copy);
 	}
+	free(str_copy);
 }
