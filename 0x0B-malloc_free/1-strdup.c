@@ -1,5 +1,6 @@
 #include "holberton.h"
 #include <stdlib.h>
+#include <stdio.h>
 #include <stddef.h>
 /**
 * _strdup - fuction that returns a pointer to a newly
@@ -18,6 +19,7 @@ char *_strdup(char *str)
 	{
 		length++;
 	}
+	/*printf("length = %d", length);*/
 	if (length == 0)
 	{
 		return (NULL);
@@ -31,7 +33,7 @@ char *_strdup(char *str)
 		}
 		else
 		{
-			for (j = 1; j <= length; j++)
+			for (j = 0; j <= length; j++)
 			{
 				str_copy[j] = str[j];
 			}
