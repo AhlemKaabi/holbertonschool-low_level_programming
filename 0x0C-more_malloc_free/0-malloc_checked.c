@@ -1,4 +1,5 @@
 #include "holberton.h"
+#include <stdio.h>
 #include <stdlib.h>
 #include <stddef.h>
 /**
@@ -14,7 +15,7 @@ void *malloc_checked(unsigned int b)
 	memory = malloc(b); /*allocate a memory */
 	if (memory == NULL)
 	{
-		exit(98);
+		exit(98); /* .. void exit (int status) .. */
 	}
 	return (memory); /*Returns a pointer to the allocated memory*/
 }
