@@ -13,7 +13,7 @@ char *str_concat(char *s1, char *s2)
 	int tot_length, i, j, L1 = 0, L2 = 0, x, h;
 	char *s_concat;
 
-	if(s1 == NULL || s2 == NULL)
+	if (s1 == NULL || s2 == NULL)
 	{
 		return (NULL);
 	}
@@ -26,7 +26,7 @@ char *str_concat(char *s1, char *s2)
 		L2++;
 	}
 	tot_length = L1 + L2;
-	s_concat = (char *) malloc(tot_length + 2 * sizeof(char));
+	s_concat = (char *) malloc(tot_length + 1 * sizeof(char));
 	if (s_concat == NULL)
 	{
 		return (NULL);
@@ -37,10 +37,11 @@ char *str_concat(char *s1, char *s2)
 		{
 			s_concat[x] = s1[x];
 		}
-		for (h = 0; s2[h] != '\0'; h++)
+		for (h = 0; h <= tot_length ; h++)
 		{
 			s_concat[L1 + h] = s2[h];
 		}
+		s_concat = s_concat + '\0';
 		return (s_concat);
 	}
 }
