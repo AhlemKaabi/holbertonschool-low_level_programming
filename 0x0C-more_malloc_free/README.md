@@ -1,0 +1,5 @@
+“calloc” or “contiguous allocation” method in C is used to dynamically allocate the specified number of blocks of memory of the specified type. It initializes each block with a default value ‘0’.
+
+“realloc” or “re-allocation” method in C is used to dynamically change the memory allocation of a previously allocated memory. In other words, if the memory previously allocated with the help of malloc or calloc is insufficient, realloc can be used to dynamically re-allocate memory. re-allocation of memory maintains the already present value and new blocks will be initialized with default garbage value.
+
+Exit function: In the C Programming Language, the exit function calls all functions registered with atexit and terminates the program. File buffers are flushed, streams are closed, and temporary files are deleted.
