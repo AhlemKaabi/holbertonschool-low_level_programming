@@ -30,7 +30,14 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	{
 		L2++;
 	}
-	tot_length = L1 + n;
+	if ( n > L2)
+	{
+		tot_length = L1 + L2;	
+	}
+	if (n <= L2)
+	{
+		tot_length = L1 + n;
+	}
 	s = malloc(tot_length + 1 * sizeof(char));
 	if (s == NULL)
 	{
