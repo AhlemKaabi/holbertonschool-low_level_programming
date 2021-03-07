@@ -5,26 +5,28 @@
 /**
 * argstostr - function that concatenates
 * all the arguments of your program.
-* @ac: the number of arguments 
+* @ac: the number of arguments
 * @av: array of the arguments content
+* Return: str.
 */
 char *argstostr(int ac, char **av)
 {
-	int i, j, x, h, l,length = 0;
+	int i, j, x, h, l, length = 0;
 	char *str;
 
 	if (ac == 0 || av == NULL)
 	{
-		return(NULL);
+		return (NULL);
 	}
-	for (h = 0; h <= ac; h++)
+	for (h = 0; h < ac; h++)
 	{
+		/*printf("ac = %d\n", ac);*/
 		for (l = 0; av[h][l] != '\0'; l++)
 		{
 			length++;
 		}
 	}
-	printf("length: %d", length);
+	/*printf("length: %d\n", length);*/
 	str = malloc((length + ac + 1) * sizeof(char));
 	if (str == NULL)
 		return (NULL);
