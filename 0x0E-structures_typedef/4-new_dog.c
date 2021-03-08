@@ -6,10 +6,12 @@
 * @name: is the new name
 * @age: is the new age
 * @owner: is the new owner
+* Return: a new dog
 */
 dog_t *new_dog(char *name, float age, char *owner)
 {
 	dog_t *N = malloc(sizeof(dog_t));
+
 	if (N != NULL)
 	{
 		N->name = name;
