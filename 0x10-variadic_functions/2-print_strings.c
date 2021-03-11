@@ -35,7 +35,10 @@ void print_strings(const char *separator, const unsigned int n, ...)
 					printf("%s%s", va_arg(ptr, char *), separator);
 					/* 'char*' is the expected arg type ! */
 			}
-			printf("%s", va_arg(ptr, char *));
+			if (va_arg(ptr, char *) == 0)
+					printf("(nil)%s", separator);
+			else
+				printf("%s", va_arg(ptr, char *));
 		}
 	}
 	printf("\n");
