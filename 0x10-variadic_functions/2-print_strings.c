@@ -1,0 +1,42 @@
+#include<stdio.h>
+#include<stdarg.h>
+#include"variadic_functions.h"
+/**
+ * print_strings - function that prints numbers.
+ * @separator: the string to be printed between strings
+ * @n: the number of strings passed to the function.
+ * Return: viod
+ */
+void print_strings(const char *separator, const unsigned int n, ...)
+{
+	unsigned int i;
+	va_list ptr; /*pointer to the first argument*/
+
+	if (n != 0)
+	{
+		va_start(ptr, n);
+		if (separator == NULL)
+		{
+			for (i = 0; i < n; i++)
+			{
+				if(va_arg(ptr, char *) == 0)
+					printf("(nil)");
+				else
+					printf("%s", va_arg(ptr, char *));
+			}
+		}
+		else
+		{
+			for (i = 0; i < n -1; i++)
+			{
+				if(va_arg(ptr, char *) == 0)
+						printf("(nil)%s", separator);
+				else
+					printf("%s%s", va_arg(ptr, char *), separator); /* 'char*' is the expected arg type ! */			
+			}
+			printf("%s", va_arg(ptr, char *));
+		}
+	}
+	printf("\n");
+	va_end(ptr);
+}
