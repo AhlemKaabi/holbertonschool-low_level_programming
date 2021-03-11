@@ -9,9 +9,11 @@
  */
 void print_strings(const char *separator, const unsigned int n, ...)
 {
+	char *s;
 	unsigned int i;
 	va_list ptr; /*pointer to the first argument*/
 
+	s = va_arg(ptr, char*);
 	if (n != 0)
 	{
 		va_start(ptr, n);
@@ -19,7 +21,7 @@ void print_strings(const char *separator, const unsigned int n, ...)
 		{
 			for (i = 0; i < n; i++)
 			{
-				if (va_arg(ptr, char *) == 0)
+				if (s == NULL)
 				{
 					printf("(nil)");
 					printf("test1");
@@ -27,7 +29,7 @@ void print_strings(const char *separator, const unsigned int n, ...)
 					
 				else
 				{
-					printf("%s", va_arg(ptr, char *));
+					printf("%s", s);
 					printf("test2");
 				}
 					
@@ -35,9 +37,10 @@ void print_strings(const char *separator, const unsigned int n, ...)
 		}
 		else
 		{
+			s = va_arg(ptr, char*);
 			for (i = 0; i < n - 1; i++)
 			{
-				if (va_arg(ptr, char *) == 0)
+				if (s == NULL)
 				{
 					printf("(nil)%s", separator);
 					printf("test3");
@@ -45,19 +48,19 @@ void print_strings(const char *separator, const unsigned int n, ...)
 					
 				else
 				{
-					printf("%s%s", va_arg(ptr, char *), separator);
+					printf("%s%s", s, separator);
 					printf("test4");
 					/* 'char*' is the expected arg type ! */
 				}
 			}
-			if (va_arg(ptr, char *) == 0)
+			if (s == NULL)
 			{
 				printf("(nil)");
 				printf("test5");
 			}
 			else
 			{
-				printf("%s", va_arg(ptr, char *));
+				printf("%s", s);
 				printf("test6");
 
 			}
