@@ -2,7 +2,7 @@
 #include<stdarg.h>
 #include"variadic_functions.h"
 /**
- * print_numbres - function that prints numbers.
+ * print_numbers - function that prints numbers.
  * @separator: the string to be printed between numbers
  * @n: the number of integers passed to the function.
  * Return: viod
@@ -18,7 +18,6 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 		for (i = 0; i < n; i++)
 		{
 			printf("%i", va_arg(ptr, int));
-			
 		}
 		printf("\n");
 	}
