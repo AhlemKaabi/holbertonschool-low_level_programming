@@ -12,7 +12,7 @@ void print_strings(const char *separator, const unsigned int n, ...)
 	char *s;
 	unsigned int i;
 	va_list ptr; /*pointer to the first argument*/
-	
+
 	if (n != 0)
 	{
 		va_start(ptr, n);
