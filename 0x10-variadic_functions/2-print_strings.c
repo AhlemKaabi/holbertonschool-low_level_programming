@@ -22,15 +22,9 @@ void print_strings(const char *separator, const unsigned int n, ...)
 			for (i = 0; i < n; i++)
 			{
 				if (s == NULL)
-				{
 					printf("(nil)");
-				}
-					
 				else
-				{
 					printf("%s", s);
-				}
-					
 			}
 		}
 		else
@@ -38,26 +32,16 @@ void print_strings(const char *separator, const unsigned int n, ...)
 			for (i = 0; i < n - 1; i++)
 			{
 				if (s == NULL)
-				{
 					printf("(nil)%s", separator);
-				}
-					
 				else
-				{
 					printf("%s%s", s, separator);
 					/* 'char*' is the expected arg type ! */
-				}
 			}
 			s = va_arg(ptr, char*);
 			if (s == NULL)
-			{
 				printf("(nil)");
-			}
 			else
-			{
 				printf("%s", s);
-
-			}
 		}
 	}
 	printf("\n");
