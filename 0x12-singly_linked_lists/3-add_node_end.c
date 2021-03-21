@@ -13,6 +13,7 @@ list_t *add_node_end(list_t **head, const char *str)
 {
 	char *s;
 	int i, len = 0;
+	list_t *new_node;
 
 	/* -- duplicate the str in another string of type char * -- */
 	s = strdup(str);
@@ -22,7 +23,7 @@ list_t *add_node_end(list_t **head, const char *str)
 		len = i + 1;
 	}
 	/*-- create new node --*/
-	list_t *new_node = malloc(sizeof(list_t));
+	new_node = malloc(sizeof(list_t));
 	list_t *curr = *head;
 
 	if (new_node == NULL)
@@ -49,4 +50,3 @@ list_t *add_node_end(list_t **head, const char *str)
 	}
 	return (new_node);
 }
-
