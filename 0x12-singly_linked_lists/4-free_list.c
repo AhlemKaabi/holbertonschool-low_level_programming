@@ -10,12 +10,14 @@
 void free_list(list_t *head)
 {
 	list_t *aux;
-	list_t *curr = head;
-	while(curr != NULL)
+	while (head != NULL)
 	{
-		aux = curr;
-		curr = curr->next;
-		free(aux);
+		aux = head; /*initialize the aux pointer to the next node*/
+		head = head->next; /*point to the next node*/
+		free(aux->str);/*free the content of the node*/
+		/*free(aux->len); -- free the content of the node*/
+		free(aux);/*destroy the pointer*/
 	}
 	head = NULL;
+	free(head);
 }
