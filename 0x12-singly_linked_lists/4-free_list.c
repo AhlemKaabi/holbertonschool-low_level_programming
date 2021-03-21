@@ -10,6 +10,7 @@
 void free_list(list_t *head)
 {
 	list_t *aux;
+
 	while (head != NULL)
 	{
 		aux = head; /*initialize the aux pointer to the next node*/
