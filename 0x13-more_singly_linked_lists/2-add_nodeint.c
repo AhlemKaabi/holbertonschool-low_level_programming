@@ -3,7 +3,8 @@
 #include <stdio.h>
 #include "lists.h"
 /**
-* add_nodeint - function that returns the number of element in a linked list.
+* add_nodeint - function that adds a new node
+* at the beginning of a listint_t list.
 * @head: list_t pointer to a list node
 * @n: the content of the elements.
 * Return: number of elemnets (nodes)
