@@ -3,8 +3,9 @@
 #include <stdio.h>
 #include "lists.h"
 /**
-* add_nodeint - function that returns the number of element in a linked list.
-* @h: list_t pointer to a list node
+* add_nodeint_end - function that adds a new node
+* at the end of a listint_t list.
+* @head: list_t pointer to a list node
 * @n: the content of the elements.
 * Return: number of elemnets (nodes)
 */
@@ -18,14 +19,14 @@ listint_t *add_nodeint_end(listint_t **head, const int n)
 		return (NULL);
 	new_node->n = n;
 	new_node->next = NULL;
-	/*add the new node at the endof the list*/
+	/*add the new node at the end of the list*/
 	if (*head == NULL)
 	{
 		*head = new_node;
 	}
 	else
 	{
-		while(curr->next != NULL)/*until the end of the node*/
+		while(curr->next != NULL)/*until last node(null)*/
 		{
 			curr = curr->next;
 		}
