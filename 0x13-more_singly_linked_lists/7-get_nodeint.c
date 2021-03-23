@@ -22,7 +22,7 @@ listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 		head = head->next;
 	}
 	/* If position is more than number of nodes*/
-	if (head->next == NULL)
+	if (i < index)
 		return (NULL);
 	return (head);
 }
