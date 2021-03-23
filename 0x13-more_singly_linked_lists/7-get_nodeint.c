@@ -21,7 +21,10 @@ listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 	{
 		head = head->next;
 	}
-	/* If position is more than number of nodes*/
+	/*
+	*If position is more than number of nodes:
+	*for loop reach the end of the list and i still < index
+	*/
 	if (i < index)
 		return (NULL);
 	return (head);
