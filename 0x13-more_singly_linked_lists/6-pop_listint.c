@@ -10,8 +10,9 @@
 */
 int pop_listint(listint_t **head)
 {
+	int x = 0;
 	listint_t *temp;
-	/*will replace the hread pointer that pointes to the first node */
+	/*will replace the head pointer that pointes to the first node */
 
 	if (*head == NULL)/*check empty list -- our fist node is not empty*/
 		return (0);
@@ -26,8 +27,15 @@ int pop_listint(listint_t **head)
 	*thus change the adress of the head pointer to the next node
 	*/
 	if (temp == NULL)
+	{
+		free(temp);
 		return (0);
+	}
 	else
-		return ((temp)->n);
+	{
+		x = temp->n;
+		free(temp);
+		return (x);
+	}
 	return (0);
 }
