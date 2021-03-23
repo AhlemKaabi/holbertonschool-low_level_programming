@@ -35,6 +35,8 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 		*head = new_node;
 		return (*head);
 	}
+	if (i < idx)
+		return (NULL);
 	store_next = curr->next;/*sotore the adress of the next node*/
 	curr->next = new_node;/*the current node points to the new node */
 	/* --create new node-- */
