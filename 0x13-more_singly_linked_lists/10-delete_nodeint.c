@@ -14,6 +14,14 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 listint_t *temp, *store_next;
 unsigned int i;
 
+/**
+* ***tests:****
+* 1- not a NULL node (you have nothing to delete)
+* 2- delete node at the beginning
+* 3- delete node at the end
+* 4- delete node in the middle
+*/
+
 /* If linked list is empty */
 if (*head == NULL)
 	return (-1);
