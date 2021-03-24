@@ -13,7 +13,7 @@ listint_t *reverse_listint(listint_t **head)
 	listint_t *Previous_node = NULL;
 	listint_t *Next_node = NULL;
 
-	if(head == NULL)
+	if (head == NULL)
 		return (NULL);
 /*the idea is to change the head pointer, until the end of the list*/
 	while (*head != NULL)
