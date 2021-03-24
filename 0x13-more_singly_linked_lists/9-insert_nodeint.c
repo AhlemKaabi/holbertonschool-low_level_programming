@@ -21,7 +21,7 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	{
 		return (NULL);
 	}
-	if (*head == NULL || idx == 0)
+	if (*head == NULL || idx == 0)/*inserst at the beginning with empty list or not */
 	{
 		new_node->n = n;
 		new_node->next = *head;
