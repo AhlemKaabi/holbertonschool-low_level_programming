@@ -11,7 +11,7 @@
 */
 int delete_nodeint_at_index(listint_t **head, unsigned int index)
 {
-listint_t *temp, *next;
+listint_t *temp, *store_next;
 unsigned int i;
 
 /* If linked list is empty */
@@ -37,13 +37,13 @@ for (i = 0; ((temp != NULL) && (i < (index - 1))); i++)
 if ((temp == NULL) || (temp->next == NULL))
 	return (-1);
 
-/* Node temp->next is the node to be deleted */
-/* Store pointer to the next of node to be deleted */
-next = (temp->next)->next;
+/* Node temp->next (that temp-> pointes to)is the node to be deleted */
+/* Store pointer to the next of node to be deleted (so we do not loose the link to the rest of the node)*/
+store_next = (temp->next)->next;
 
 /* Unlink the node from linked list */
 free(temp->next);  /* Free memory */
 
-temp->next = next;  /* Unlink the deleted node from list */
+temp->next = store_next;  /* Unlink the deleted node from list = link the previous with the next node*/
 return (1);
 }
