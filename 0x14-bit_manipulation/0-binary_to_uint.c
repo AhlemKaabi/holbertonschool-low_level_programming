@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include "holberton.h"
 /**
-* main - check the code for Holberton School students.
-*
+* binary_to_uint - function that converts a binary number to an unsigned int.
+*@b: is pointing to a string of 1 and 0 chars.
 * Return: Always 0.
 */
 unsigned int binary_to_uint(const char *b)
@@ -19,7 +19,7 @@ unsigned int binary_to_uint(const char *b)
 		len++;
 	}
 	len = len - 1;
-	while(len >= 0)
+	while (len >= 0)
 	{
 		if (b[len] == '1')
 		{
@@ -27,7 +27,7 @@ unsigned int binary_to_uint(const char *b)
 		}
 		if (b[len] != '1' && b[len] != '0')
 		{
-			return(0);
+			return (0);
 		}
 		len--;
 		j++;
