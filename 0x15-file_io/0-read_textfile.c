@@ -52,7 +52,6 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	/* write - write to a file descriptor */
 	/* ssize_t write(int fd, const void *buf, size_t count); */
 	/*STDOUT_FILENO : is the file descriptor (1)*/
-	
 	free(buf);
 	close(fd);
 	return (printed);
