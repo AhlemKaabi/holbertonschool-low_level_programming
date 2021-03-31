@@ -42,7 +42,7 @@ int append_text_to_file(const char *filename, char *text_content)
 	{
 		return (-1);
 	}
-	print = write(APP, text_content, length);
+	print = write(APP, text_content, length + 1);
 	if (print == -1)
 	{
 		return (-1);
