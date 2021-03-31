@@ -33,11 +33,13 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	/* syntax : int open(const char *pathname, int flags); */
 	if (fd == -1)
 	{
+		free(buf);
 		return (0);
 	}
 	read_buf = read(fd, buf, letters);
 	if (read_buf == -1UL)
 	{
+		free(buf);
 		return (0);
 	}
 	/* syntax : ssize_t read(int fd, void *buf, size_t count); */
@@ -49,7 +51,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	/* write - write to a file descriptor */
 	/* ssize_t write(int fd, const void *buf, size_t count); */
 	/*STDOUT_FILENO : is the file descriptor (1)*/
-	close(fd);
 	free(buf);
+	close(fd);
 	return (printed);
 }
