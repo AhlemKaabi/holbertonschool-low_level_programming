@@ -30,7 +30,7 @@ int create_file(const char *filename, char *text_content)
 		length++;
 		i++;
 	}
-	if (text_content == NULL)
+	if (text_content != NULL) /*better than check == NULL FIRST!*/
 	{
 		Cre = open(filename, O_CREAT | O_WRONLY | O_TRUNC | O_RDONLY, 0600);
 		if (Cre == -1)
@@ -38,23 +38,11 @@ int create_file(const char *filename, char *text_content)
 			return (-1);
 		}
 		printed = write(Cre, text_content, length);
-		if (printed == -1UL)
+		if (printed == -1L)
 		{
 			return (0);
 		}
 		close(Cre);
-		return (1);
 	}
-	Cre = open(filename, O_CREAT | O_WRONLY | O_TRUNC | O_RDONLY, 0600);
-	if (Cre == -1)
-	{
-		return (-1);
-	}
-	printed = write(Cre, text_content, length);
-	if (printed == -1UL)
-	{
-		return (0);
-	}
-	close(Cre);
 	return (1);
 }
