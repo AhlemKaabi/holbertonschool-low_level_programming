@@ -30,7 +30,7 @@ int create_file(const char *filename, char *text_content)
 		length++;
 		i++;
 	}
-	Cre = open(filename, O_CREAT | O_WRONLY | O_TRUNC | O_RDONLY, 0600);
+	Cre = open(filename, O_CREAT | O_TRUNC | O_RDONLY, 0600);
 	if (Cre == -1)
 	{
 		return (-1);
@@ -38,7 +38,7 @@ int create_file(const char *filename, char *text_content)
 	printed = write(Cre, text_content, length);
 	if (printed == -1L)
 	{
-		return (0);
+		return (-1);
 	}
 	close(Cre);
 	return (1);
