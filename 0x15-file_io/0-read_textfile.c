@@ -40,9 +40,12 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	{
 		return (0);
 	}
-	
 	/* syntax : ssize_t read(int fd, void *buf, size_t count); */
 	printed = write(STDOUT_FILENO, buf, read_buf);
+	if (printed == -1UL)
+	{
+		return (0);
+	}
 	/* write - write to a file descriptor */
 	/* ssize_t write(int fd, const void *buf, size_t count); */
 	/*STDOUT_FILENO : is the file descriptor (1)*/
