@@ -17,7 +17,7 @@
  */
 int append_text_to_file(const char *filename, char *text_content)
 {
-	int APP, i, length = 0;
+	int APP, i, length = 0, print;
 
 	if (filename == NULL)
 	{
@@ -42,7 +42,11 @@ int append_text_to_file(const char *filename, char *text_content)
 	{
 		return (-1);
 	}
-	write(APP, text_content, length);
+	print = write(APP, text_content, length);
+	if (print == -1)
+	{
+		return (-1);
+	}
 	close(APP);
 	return (1);
 }
