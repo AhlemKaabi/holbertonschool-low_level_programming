@@ -17,8 +17,7 @@
  */
 int create_file(const char *filename, char *text_content)
 {
-	int Cre, i, length = 0;
-	ssize_t printed;
+	int Cre, i, length = 0, printed;
 
 	if (filename == NULL)
 	{
@@ -36,7 +35,7 @@ int create_file(const char *filename, char *text_content)
 		return (-1);
 	}
 	printed = write(Cre, text_content, length);
-	if (printed == -1L)
+	if (printed == -1)
 	{
 		return (-1);
 	}
