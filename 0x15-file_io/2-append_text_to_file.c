@@ -8,7 +8,6 @@
 #include <unistd.h>
 
 #include "holberton.h"
-
 /**
  * append_text_to_file - function that appends text at the end of a file.
  *@filename: is the filename to create.
@@ -23,11 +22,14 @@ int append_text_to_file(const char *filename, char *text_content)
 	{
 		return (-1);
 	}
-	i = 0;
-	while (text_content[i] != '\0')
+	if (text_content != NULL)
 	{
-		length++;
-		i++;
+		i = 0;
+		while (text_content[i] != '\0')
+		{
+			length++;
+			i++;
+		}
 	}
 	if (text_content == NULL)
 	{
