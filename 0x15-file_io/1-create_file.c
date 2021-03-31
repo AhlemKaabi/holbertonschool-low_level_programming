@@ -23,7 +23,6 @@ int create_file(const char *filename, char *text_content)
 	{
 		return (-1);
 	}
-	i = 0;
 	if (text_content != NULL) /*to avoid segmentation fault*/
 	{
 		i = 0;
