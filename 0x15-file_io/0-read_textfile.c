@@ -20,7 +20,12 @@ ssize_t read_textfile(const char *filename, size_t letters)
 {
 	int fd;
 	size_t read_buf, printed = 0;
-	char buf[letters + 1];
+	char *buf = malloc(sizeof(char) * letters);
+
+	if (buf == NULL)
+	{
+		return (0);
+	}
 
 	if (filename == NULL)
 		return (0);
@@ -31,6 +36,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		return (0);
 	}
 	read_buf = read(fd, buf, letters);
+	
 	/* syntax : ssize_t read(int fd, void *buf, size_t count); */
 	printed = write(STDOUT_FILENO, buf, read_buf);
 	/* write - write to a file descriptor */
