@@ -15,7 +15,7 @@ void print_number(int n)
 	if (n > 0)
 	{
 		aux = n;
-		if ((n / 10) != 0)
+		if ((aux / 10) != 0)
 		{
 			i = 0;
 			while (aux > 0)
@@ -29,9 +29,9 @@ void print_number(int n)
 			}
 			while (f > 1)
 			{
-				print = n / f;
+				print = aux / f;
 				_putchar(print + '0');
-				n = n % f;
+				aux = aux % f;
 				f = f / 10;
 			}
 		}
