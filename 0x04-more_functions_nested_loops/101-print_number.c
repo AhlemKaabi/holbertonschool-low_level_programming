@@ -5,39 +5,31 @@
  */
 void print_number(int n)
 {
-	unsigned int i, j, f = 1, aux, print = 0;
-
+	unsigned int i, digit_count, aux, factor, numb;
+	digit_count = factor = 1;
+	numb = n;
 	if (n < 0)
 	{
 		_putchar('-');
-		n = n * (-1);
+		numb = numb * (-1);
 	}
-	if (n > 0)
+	aux = numb;
+	/* while the number is composed of more than 1 digit */
+	while (aux > 9)
 	{
-		aux = n;
-		if ((aux / 10) != 0)
-		{
-			i = 0;
-			while (aux > 0)
-			{
-				aux = aux / 10;
-				i++;
-			}
-			for (j = 0; j <= (i - 2); j++)
-			{
-				f = f * 10;
-			}
-			while (f > 1)
-			{
-				print = n / f;
-				_putchar(print + '0');
-				n = n % f;
-				f = f / 10;
-			}
-		}
+		aux = aux / 10;
+		digit_count++;
 	}
-	if ((n / 10) == 0)
+
+	for (i = 1; i < digit_count; i++)
 	{
-		_putchar(n + '0');
+		factor = factor * 10;
 	}
+
+	while (factor > 1)
+	{
+		_putchar(((numb / factor) % 10) + '0'); /*print the first digit, from the left*/
+		factor = factor / 10;
+	}
+	_putchar((numb % 10) + '0'); /*print last digit*/
 }
