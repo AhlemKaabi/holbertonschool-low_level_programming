@@ -29,9 +29,9 @@ void print_number(int n)
 			}
 			while (f > 1)
 			{
-				print = aux / f;
+				print = n / f;
 				_putchar(print + '0');
-				aux = aux % f;
+				n = n % f;
 				f = f / 10;
 			}
 		}
