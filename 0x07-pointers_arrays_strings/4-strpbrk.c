@@ -1,43 +1,36 @@
 #include "holberton.h"
-
 #include <stdio.h>
 /**
-* _strpbrk - function that searches a string for any of a set of bytes.
-*@s: the first string.
-*@accept: the second string.
-* Return: the length of the prefix
+* _strpbrk - fills memory with a constant byte.
+* @s: the memory area to print in
+* @accept: the memore to copy from
+* Return: r.
 */
+
 char *_strpbrk(char *s, char *accept)
-{
-	int  i, j, match;
-	
-	match = 0;
-	
-	if (*accept == '\0')
+{	int i, j;
+	int found = 0;
+
+	for (i = 0; *(s + i) && found == 0; i++)
 	{
-		return (0);
-	}
-	else 
-	{
-	while (s[j] != '\0')
-	{	
-		i = 0;
-		match = 0;
-		while (accept[i] != '\0' && match == 0)
+		for (j = 0; *(accept + j); j++)
 		{
-			if (s[j] == accept[i])
+			if (*(s + i) == *(accept + j))
 			{
-			match = 1;
+				found = 1;
+				break;
 			}
-			i++;
 		}
-		 j++;
 	}
-	}
-	if (match == 1)
+	if (found == 1)
 	{
-		return (s + j);
-	}
+		while (i > 1)
+		{
+			s++;
+			i--;
+		}
+			return (s);
+		}
 	else
 	{
 		return (0);
