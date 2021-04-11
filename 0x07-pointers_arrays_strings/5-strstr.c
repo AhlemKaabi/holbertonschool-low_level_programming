@@ -7,7 +7,7 @@
 * @c: the memore to copy from
 * Return: result.
 */
-char *_strchr(char *s, char c)
+char *_strstr(char *s, char c)
 {
 	while (*s != '\0')
 	{
