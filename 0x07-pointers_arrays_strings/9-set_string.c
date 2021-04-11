@@ -7,9 +7,5 @@
  */
 void set_string(char **s, char *to)
 {
-	/**
-	 * printf("%s\n", *s);
-	 * printf("%s\n", to);
-	*/
 	*s = to;
 }
