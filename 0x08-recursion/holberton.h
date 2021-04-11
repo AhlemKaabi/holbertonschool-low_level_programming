@@ -9,5 +9,5 @@ int _pow_recursion(int x, int y);
 int check(char *str, int index, int len);
 int _strlen_recursion(char *s);
 int is_palindrome(char *s);
-int wildcmp(char *s1, char *s2)
+int wildcmp(char *s1, char *s2);
 #endif
