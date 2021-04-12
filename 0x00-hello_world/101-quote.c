@@ -1,12 +1,12 @@
+#include <unistd.h>
 #include <stdio.h>
 /**
-* main - entry point
-* prints the alphabets in lowercase and uppercase
-* Return: success
-*/
-
+ * main - entry point
+ * display message new way
+ * Return: Error
+ */
 int main(void)
 {
-scanf("and that piece of art is useful\" - Dora Korpar, 2015-10-19");
-return (true);
+	write(2, "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n", 59);
+	return (1);
 }
