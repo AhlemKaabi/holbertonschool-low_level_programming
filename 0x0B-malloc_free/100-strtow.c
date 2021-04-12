@@ -72,17 +72,17 @@ char **strtow(char *str)
 			if (words[b] == 0)
 			{
 				free_everything(words, b);
-				return (NULL);
-			}
+				return (NULL); }
 			while (*found_word != ' ' && *found_word != '\0')
 			{
 				words[b][c] = *found_word;
 				found_word++;
-				c++;
-			}
+				c++; }
 			words[b][c] = '\0';
-			b++; c = 0; length = 0; str++;
-		}
+			b++;
+			c = 0;
+			length = 0;
+			str++; }
 	}
 	return (words);
 }
