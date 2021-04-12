@@ -1,17 +1,19 @@
-# include "holberton.h"
+#include "holberton.h"
+#include <stdio.h>
 /**
-* reverse_array - function
-*@a: para
-*@n: para
+* reverse_array - copie n bytes of a string
+* @a: The destination string
+* @n: source string.
+* Return: void.
 */
 void reverse_array(int *a, int n)
 {
 	int i, aux;
 
-	for (i = 0 ; i <= (n - 1) / 2; i++)
+	for (i = 0; i < n / 2; i++)
 	{
-		aux = a[i];
-		a[i] = a[n - 1 - i];
-		a[n - 1 - i] = aux;
+		aux = *(a + i);
+		*(a + i) = a[n - i - 1];
+		a[n - i - 1] = aux;
 	}
 }
