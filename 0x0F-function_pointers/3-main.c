@@ -2,16 +2,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 /**
- *main - entry point
- *@argc: argument count
- *@argv: arguments
- * Return: always true
-**/
-int main(int argc, char **argv)
+ *main - print the result
+ *@argc:integer
+ *@argv:string
+ *Return:int
+ */
+int main(int argc, char *argv[])
 {
-	int num1, num2;
-	int (*fun_ptr)(int, int);
-	int result;
+	int num1, num2, result;
+	int (*function)(int, int);
 
 	if (argc != 4)
 	{
@@ -20,22 +19,18 @@ int main(int argc, char **argv)
 	}
 	num1 = atoi(argv[1]);
 	num2 = atoi(argv[3]);
-	/* printf("------ test params --------\n"); */
-	if ((*(argv[2]) == '/' || *(argv[2]) == '%') && num2 == 0)
-	{
-		printf("Error");
-		exit(100);
-	}
-	/* printf("------ test verif completed --------\n"); */
-	fun_ptr = *get_op_func(argv[2]);
-	if (fun_ptr == NULL)
+	function = get_op_func(argv[2]);
+	if (function == NULL)
 	{
 		printf("Error\n");
 		exit(99);
 	}
-	/* printf("---------- ptr sent completed -----------\n"); */
-	result = fun_ptr(num1, num2);
+	if ((*argv[2] == '/' && num2 == 0) || (*argv[2] == '%' && num2 == 0))
+	{
+		printf("Error\n");
+		exit(100);
+	}
+	result = function(num1, num2);
 	printf("%d\n", result);
-	/* TODO check op = NULL */
 	return (0);
 }
