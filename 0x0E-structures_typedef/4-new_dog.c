@@ -1,46 +1,68 @@
 #include "dog.h"
 #include <stddef.h>
+#include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 /**
-* new_dog - function that creates new dog
-* @name: is the new name
-* @age: is the new age
-* @owner: is the new owner
-* Return: a new dog
+ * _getlength - allocate memory and add
+ * @str: str
+ * Return: int
+ * this _getlength doesn't count the null byte
+ **/
+int _getlength(char *str)
+{
+	int  i;
+	int l = 0;
+
+	for (i = 0; str[i] != '\0'; i++)
+	{
+		l++;
+	}
+	return (l);
+}
+/**
+ * new_dog - copy to new dog struct
+ * @name: name element
+ * @age: age element
+ * @owner: owner element
+ * Return: Void
 */
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	int i;
-	char *cpy_name, *cpy_owner;
-	dog_t *N;
+	dog_t *p;
+	int len, i;
 
-	cpy_name = malloc(sizeof(name + 1));
-	if (cpy_name == NULL)
+	p = malloc(sizeof(dog_t));
+	if (p == NULL)
 		return (NULL);
-	for (i = 0; name[i] != '\0'; i++)
+	if (age)
+		p->age = age;
+	if (name && owner)
 	{
-		cpy_name[i] = name[i];
+		len = _getlength(name);
+		/* +1 to add the null byte */
+		p->name = malloc((len + 1) * sizeof(char));
+		if (p->name == NULL)
+		{
+			free(p);
+			return (NULL);
+		}
+		for (i = 0; i < len; i++)
+			p->name[i] = name[i];
+		p->name[len] = '\0';
+
+		len = _getlength(owner);
+		p->owner = malloc((len + 1) * sizeof(char));
+		if (p->owner == NULL)
+		{
+			free(p->name);
+			free(p);
+			return (NULL);
+		}
+		for (i = 0; i < len; i++)
+			p->owner[i] = owner[i];
+		p->owner[len] = '\0';
 	}
-	cpy_name = '\0';
-	cpy_owner = malloc(sizeof(owner + 1));
-	if (cpy_owner == NULL)
+	else
 		return (NULL);
-	for (i = 0; owner[i] != '\0'; i++)
-	{
-		cpy_owner[i] = owner[i];
-	}
-	cpy_owner = '\0';
-	N = malloc(sizeof(dog_t));
-	if (N == NULL)
-	{
-		free(cpy_name);
-		free(cpy_owner);
-		free(N);
-		return (NULL);
-	}
-	N->name = cpy_name;
-	N->age = age;
-	N->owner = cpy_owner;
-	return (N);
+	return (p);
 }
