@@ -4,7 +4,7 @@
 
 /**
 * main - entry point
-* prints 10 decimal numbers
+* all possible different combinations of two digits.
 * Return: success
 */
 
@@ -12,7 +12,7 @@ int main(void)
 {
 	int i, j;
 
-	for (i = 0; i < 100 ; i++)
+	for (i = 1; i < 100 ; i++)
 	{
 		putchar((i / 10) + '0');
 		putchar((i % 10) + '0');
