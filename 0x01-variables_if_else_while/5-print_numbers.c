@@ -4,15 +4,17 @@
 
 /**
 * main - entry point
-* prints the alphabet in lowercase
+* print all single digit numbers
+* of base 10 starting from 0, followed by a new line
 * Return: success
 */
 
 int main(void)
 {
-int i;
-for (i = 0 ; i < 10 ; i++)
-printf("%d", i);
-putchar('\n');
-return (0);
+	int i;
+
+	for (i = 0 ; i < 10 ; i++)
+		printf("%d", i);
+	putchar('\n');
+	return (0);
 }
