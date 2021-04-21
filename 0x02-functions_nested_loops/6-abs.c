@@ -1,6 +1,6 @@
 #include "holberton.h"
 /**
-* _abs - prints the sign of a number
+* _abs - computes the absolute value of an integer.
 * @n: number
 * Return: success or fail
 */
