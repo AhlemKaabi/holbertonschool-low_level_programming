@@ -10,16 +10,20 @@
 
 int main(void)
 {
-	int i, j;
+	int i;
 
-	for (i = 1; i < 100 ; i++)
+	for (i = 1; i < 90 ; i++)
 	{
-		putchar((i / 10) + '0');
-		putchar((i % 10) + '0');
-		for (j = 0 ; ((j < 1) && (i < 99)); j++)
+
+		if ((i % 10) > (i / 10))
 		{
-			putchar(44);
-			putchar(32);
+			putchar((i / 10) + '0');
+			putchar((i % 10) + '0');
+			if ((i / 10) != 8)
+			{
+				putchar(44);
+				putchar(32);
+			}
 		}
 	}
 	printf("\n");
