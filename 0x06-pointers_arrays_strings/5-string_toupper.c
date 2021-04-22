@@ -1,8 +1,9 @@
 # include "holberton.h"
 #include <stdio.h>
 /**
-* string_toupper - function
-*@ch: para
+* string_toupper - function that changes all lowercase letters
+* of a string to uppercase.
+* @ch: the string to toupper
 * Return: string
 */
 char *string_toupper(char *ch)
