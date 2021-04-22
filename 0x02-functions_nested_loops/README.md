@@ -8,6 +8,6 @@
 *What is a prototype*</br>
 *Scope of variables*</br>
 *What are the gcc flags -Wall -Werror -pedantic -Wextra*</br>
-*What are header files and how to to use them with #include
+*What are header files and how to to use them with #include*
  
 Project for [holberton school](https://www.holbertonschool.com/tn/en/).
