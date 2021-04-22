@@ -1,8 +1,8 @@
 # include "holberton.h"
 #include <stdio.h>
 /**
-* cap_string - function
-*@ch: para
+* cap_string - function that capitalizes all words of a string.
+* @ch: the string to capitalize
 * Return: string
 */
 char *cap_string(char *ch)
@@ -21,8 +21,7 @@ char *cap_string(char *ch)
 		{
 			if (*(ch + i + 1) >= 'a' && *(ch + i + 1) <= 'z')
 			{
-			*(ch + i + 1) = *(ch + i + 1) - 32;
-
+				*(ch + i + 1) = *(ch + i + 1) - 32;
 			}
 		/*printf(" chpart2 is : %c\n" , *(ch + i));*/
 		}
