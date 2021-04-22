@@ -1,6 +1,6 @@
 #include "holberton.h"
 /**
- *print_number - function that prints integer.
+ *print_number - function that prints an integer.
  *@n: number to print.
  */
 void print_number(int n)
