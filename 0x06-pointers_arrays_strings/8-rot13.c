@@ -1,7 +1,7 @@
 # include "holberton.h"
 /**
-* rot13 - function
-*@ch: para
+* rot13 - function that encodes a string using rot13.
+* @ch: the stirng to encode
 * Return: string
 */
 char *rot13(char *ch)
