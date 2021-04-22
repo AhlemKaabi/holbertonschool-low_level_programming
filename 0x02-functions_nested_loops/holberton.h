@@ -1,5 +1,6 @@
 #ifndef HEADER_FILE
 #define HEADER_FILE
+
 int _putchar(char c);
 void print_alphabet(void);
 void print_alphabet_x10(void);
@@ -12,4 +13,5 @@ void jack_bauer(void);
 int add(int x , int y);
 void print_to_98(int n);
 void times_table(void);
+
 #endif
