@@ -1,15 +1,14 @@
 # include "holberton.h"
 /**
-* _strncpy - function
-*@n: para
-*@dest: para
-*@src: para
+* _strncpy - function that copies a string.
+*@n: the bytes to copy
+*@dest: the destination string
+*@src: the source string
 * Return: string
 */
 char *_strncpy(char *dest, char *src, int n)
 {
 	char *p = dest;
-
 	int j;
 
 	j = 0;
