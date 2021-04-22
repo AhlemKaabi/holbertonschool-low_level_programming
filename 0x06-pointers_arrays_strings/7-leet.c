@@ -1,7 +1,7 @@
 # include "holberton.h"
 /**
-* leet - function
-*@ch: para
+* leet - function that encodes a string into 1337
+* @ch: the string to encode
 * Return: string
 */
 char *leet(char *ch)
