@@ -1,8 +1,7 @@
 #include "holberton.h"
 /**
-* print_square - funtion that prints sdaure
+* print_square - funtion that prints sqaure.
 * @size: parameter
-* Return: success or fail
 */
 void print_square(int size)
 {
