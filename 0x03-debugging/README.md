@@ -1,2 +1,8 @@
-this a read me file for the Debugging projrct folder
-Debugging is the process of finding and fixing errors in software that prevents it from running correctly. As you become a more advanced programmer and an industry engineer, you will learn how to use debugging tools such as gdb or built-in tools that IDEs have. However, it’s important to understand the concepts and processes of debugging manually.
+# C Debugging
+
+[Project-based learning](https://en.wikipedia.org/wiki/Project-based_learning), to learn *debugging*
+
+*Debugging is the process of finding and fixing errors in software that prevents it from running correctly.*
+*learn how to use debugging tools such as gdb or built-in tools that IDEs have.*
+
+Project for [holberton school](https://www.holbertonschool.com/tn/en/).
