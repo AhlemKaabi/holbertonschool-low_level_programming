@@ -1,6 +1,6 @@
 #include "holberton.h"
 /**
-* add - somme
+* add - function that adds two integers and returns the result.
 * @x: parameter
 * @y: parameter
 * Return: success
