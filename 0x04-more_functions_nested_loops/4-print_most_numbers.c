@@ -1,6 +1,6 @@
 #include "holberton.h"
 /**
-* print_most_numbers - funtion that print numbers from 0 to 9
+* print_most_numbers - funtion that print numbers from 0 to 9.
 * Return: success or fail
 */
 int print_most_numbers(void)
