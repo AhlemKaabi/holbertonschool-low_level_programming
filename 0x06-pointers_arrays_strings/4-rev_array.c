@@ -1,10 +1,10 @@
 #include "holberton.h"
 #include <stdio.h>
 /**
-* reverse_array - copie n bytes of a string
-* @a: The destination string
-* @n: source string.
-* Return: void.
+* reverse_array - unction that reverses the content
+* of an array of integers.
+* @a: The array
+* @n: the number of elemenets of the array
 */
 void reverse_array(int *a, int n)
 {
