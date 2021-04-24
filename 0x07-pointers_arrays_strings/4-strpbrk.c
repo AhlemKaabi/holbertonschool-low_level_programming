@@ -8,7 +8,8 @@
 */
 
 char *_strpbrk(char *s, char *accept)
-{	int i, j;
+{	
+	int i, j;
 	int found = 0;
 
 	for (i = 0; *(s + i) && found == 0; i++)
@@ -29,10 +30,10 @@ char *_strpbrk(char *s, char *accept)
 			s++;
 			i--;
 		}
-			return (s);
-		}
+		return (s);
+	}
 	else
 	{
-		return (0);
+		return (NULL);
 	}
 }
