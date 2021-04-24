@@ -1,4 +1,5 @@
-/** the code is not terminated **/
+/*------------------ the code is not terminated ------------------*/
+
 #include "holberton.h"
 /**
 * rev_string - function that reverse a string.
