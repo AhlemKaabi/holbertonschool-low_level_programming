@@ -22,11 +22,9 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	{
 		return (0);
 	}
-	/* get the index */
 	index = key_index((const unsigned char *)key, ht->size);
 	value_cp = strdup(value);
-	key_cp = strdup(key);
-	node->key = (char *)key_cp;
+	node->key = (char *)key;
 	node->value = (char *)value_cp;
 	node->next = NULL;
 	if (ht->array[index] == NULL)
