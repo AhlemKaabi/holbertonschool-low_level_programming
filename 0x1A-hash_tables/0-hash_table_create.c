@@ -19,7 +19,7 @@ hash_table_t *hash_table_create(unsigned long int size)
 		return (NULL);
 	}
 	my_hash_table->size = size;
-	my_hash_table->array = malloc(sizeof(hash_node_t*) * size);
+	my_hash_table->array = malloc(sizeof(hash_node_t *) * size);
 	/* array of double pointers */
 	for (i = 0; i < size; i++)
 	{
