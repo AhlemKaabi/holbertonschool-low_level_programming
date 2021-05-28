@@ -6,8 +6,8 @@
  */
 hash_table_t *hash_table_create(unsigned long int size)
 {
-	hash_table_t *my_hash_table;
 	unsigned long int i;
+	hash_table_t *my_hash_table;
 
 	if (size == 0)
 	{
