@@ -24,17 +24,16 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	index = key_index((const unsigned char *)key, ht->size);
 	printf("index is :%ld\n", index);
 	value_cp = strdup(value);
+	node->key = (char *)key;
+	node->value = (char *)value_cp;
 	if (ht->array[index] == NULL)
 	{
-		node->key = (char *)key;
-		node->value = (char *)value_cp;
+
 		node->next = NULL;
 		ht->array[index] = node;
 	}
 	else
 	{
-		node->key = (char *)key;
-		node->value = (char *)value_cp;
 		node->next = ht->array[index];
 		ht->array[index] = node;
 	}
