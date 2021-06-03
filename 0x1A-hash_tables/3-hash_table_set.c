@@ -9,24 +9,26 @@
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	unsigned long int index;
-	const char *value_cp, *key_cp;
-	hash_node_t *aux = NULL;
 	hash_node_t *node = NULL;
-	hash_node_t *curr;
+	hash_node_t *curr = NULL;
+
+	printf("sizeof node struct %lu\n", sizeof(hash_node_t));
+	printf("sizeof table struct %lu\n", sizeof(hash_table_t));
+	printf("sizeof array struct %lu\n", sizeof(ht->array[1]));
+
+
 
 	if (ht == NULL || key == NULL || value == NULL || strcmp(key, "") == 0)
 		return (0);
 	index = key_index((const unsigned char *)key, ht->size);
-	value_cp = strdup(value);
-	key_cp = strdup(key);
 	/* Same key */
 	curr = ht->array[index];
-	if (curr  != NULL)
+	if (curr != NULL)
 	{
 		if (strcmp(curr->key, key) == 0)
 		{
 			free(curr->value);
-			curr->value = (char *)value_cp;
+			curr->value = (char *)strdup(value);
 			return (1);
 		}
 	}
@@ -34,8 +36,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	node = malloc(sizeof(hash_node_t));
 	if (node == NULL)
 		return (0);
-	node->key = (char *)key_cp;
-	node->value = (char *)value_cp;
+	node->key = (char *)strdup(key);
+	node->value = (char *)strdup(value);
 	node->next = NULL;
 	if (ht->array[index] == NULL)
 	{
@@ -43,9 +45,9 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	}
 	else
 	{
-		aux = ht->array[index];
-		node->next = aux;
+		node->next = ht->array[index];
 		ht->array[index] = node;
 	}
+
 	return (1);
 }
