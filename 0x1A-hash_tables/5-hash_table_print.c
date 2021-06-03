@@ -14,6 +14,7 @@ void hash_table_print(const hash_table_t *ht)
 		return;
 	}
 	printf("{");
+
 	i = 0;
 	separator = 0;
 	while (i < ht->size)
