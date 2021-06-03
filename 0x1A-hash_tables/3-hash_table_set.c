@@ -12,12 +12,6 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	hash_node_t *node = NULL;
 	hash_node_t *curr = NULL;
 
-	printf("sizeof node struct %lu\n", sizeof(hash_node_t));
-	printf("sizeof table struct %lu\n", sizeof(hash_table_t));
-	printf("sizeof array struct %lu\n", sizeof(ht->array[1]));
-
-
-
 	if (ht == NULL || key == NULL || value == NULL || strcmp(key, "") == 0)
 		return (0);
 	index = key_index((const unsigned char *)key, ht->size);
