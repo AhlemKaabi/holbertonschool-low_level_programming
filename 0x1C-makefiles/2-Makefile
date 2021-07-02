@@ -4,7 +4,7 @@ main.o: main.c
 	gcc    -c -o main.o main.c
 holberton.o: holberton.c
 	gcc    -c -o holberton.o holberton.c
-CC = gcc
-SRC = .c
-OBJ = .o
+CC= gcc
+SRC= .c
+OBJ= .o
 NAME = holberton
