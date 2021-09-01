@@ -14,7 +14,7 @@ int jump_search(int *array, size_t size, int value)
 	/**
 	 * You can assume that array will be sorted in ascending order
 	 */
-	size_t x,  start = 0, step = 0;
+	size_t x, start = 0, step = 0;
 
 	if (array == NULL || size <= 0)
 	{
